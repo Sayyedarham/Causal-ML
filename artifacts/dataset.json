@@ -1,0 +1,89 @@
+{
+  "schema_version": 3,
+  "name": "Criteo Uplift Prediction Dataset v2.1",
+  "license": "CC BY-NC-SA 4.0",
+  "citation": "Diemert E., Betlei A., Renaudin C., Amini M-R. (2018). A Large Scale Benchmark for Uplift Modeling. Proceedings of the AdKDD and TargetAd Workshop, KDD, London, United Kingdom.",
+  "source_url": "https://huggingface.co/datasets/criteo/criteo-uplift/resolve/main/criteo-research-uplift-v2.1.csv.gz",
+  "features": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11"
+  ],
+  "columns": [
+    "treatment",
+    "conversion",
+    "visit",
+    "exposure"
+  ],
+  "key_figures": {
+    "rows": 13979592,
+    "treatment_ratio": 0.8500001287591226,
+    "conversion_rate": 0.002916680257907384,
+    "visit_rate": null,
+    "exposure_rate": null,
+    "naive_ate_conversion": 0.0011518730521316279,
+    "naive_ate_visit": 0.010342403129198284
+  },
+  "version_note": "v2.1 is Criteo's un-biased release. The original v2 was subsampled non-uniformly in a way that leaked information about the incrementality level; v2.1 corrects it and is the version intended for uplift evaluation. All results here use v2.1.",
+  "validation": {
+    "rows": 13979592,
+    "malformed_rows": 0,
+    "treatment_ratio": 0.8500001287591226,
+    "conversion_rate": 0.002916680257907384,
+    "visit_rate": 0.046992000911042324,
+    "exposure_rate": 0.03063122299992732,
+    "naive_ate_conversion": 0.0011518730521316279,
+    "naive_ate_visit": 0.010342403129198284,
+    "conv_rate_treated": 0.0030894610674129645,
+    "conv_rate_control": 0.0019375880152813366,
+    "exposure_rate_treated": 0.036036727482199896,
+    "exposure_rate_control": 0.0
+  },
+  "splits": {
+    "train": {
+      "n": 4001013,
+      "n_treated": 3400201,
+      "n_control": 600812,
+      "treatment_ratio": 0.8498350292788351,
+      "conversion_rate": 0.0029252591781131427,
+      "conversion_rate_treated": 0.0030977580443038513,
+      "conversion_rate_control": 0.0019490289807793453,
+      "visit_rate": 0.04703008962980125,
+      "exposure_rate_treated": 0.036089925272064796,
+      "exposure_rate_control": 0.0
+    },
+    "valid": {
+      "n": 999672,
+      "n_treated": 849358,
+      "n_control": 150314,
+      "treatment_ratio": 0.8496366808313127,
+      "conversion_rate": 0.002962971854768364,
+      "conversion_rate_treated": 0.0031353092571094875,
+      "conversion_rate_control": 0.0019891693388506726,
+      "visit_rate": 0.04689538168519274,
+      "exposure_rate_treated": 0.03597658466747826,
+      "exposure_rate_control": 0.0
+    },
+    "test": {
+      "n": 4195012,
+      "n_treated": 3565143,
+      "n_control": 629869,
+      "treatment_ratio": 0.8498528728880871,
+      "conversion_rate": 0.002910122783915755,
+      "conversion_rate_treated": 0.003078137398696209,
+      "conversion_rate_control": 0.001959137534947743,
+      "visit_rate": 0.04704491906101818,
+      "exposure_rate_treated": 0.03607681374912591,
+      "exposure_rate_control": 0.0
+    }
+  }
+}

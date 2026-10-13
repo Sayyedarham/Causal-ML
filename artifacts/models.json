@@ -1,0 +1,114 @@
+{
+  "response": {
+    "name": "response",
+    "kind": "response",
+    "is_causal": false,
+    "description": "Treatment-blind gradient-boosted classifier ranking users by predicted conversion probability P(Y=1|X). The conventional targeting policy: it identifies who will convert, not who converts because of the ad.",
+    "fit_seconds": 67.77,
+    "n_train": 4001013,
+    "best_iterations": {
+      "response": 399
+    },
+    "diagnostics": {
+      "best_iteration": 399,
+      "auc_valid": 0.9601577556128602,
+      "logloss_valid": 0.011830175633896978
+    },
+    "qini_coefficient": 1598.9982365982628
+  },
+  "constant": {
+    "name": "constant",
+    "kind": "constant",
+    "is_causal": true,
+    "description": "Applies the sample average treatment effect to every user. Equivalent to random targeting and to assuming the effect is homogeneous; it is the floor that any heterogeneous-effect model must beat.",
+    "fit_seconds": 0.02,
+    "n_train": 4001013,
+    "best_iterations": {},
+    "diagnostics": {
+      "ate": 0.001148729063524506
+    },
+    "qini_coefficient": -103.35044145528991
+  },
+  "s_learner": {
+    "name": "s_learner",
+    "kind": "s_learner",
+    "is_causal": true,
+    "description": "Single gradient-boosted classifier with the treatment indicator appended as one more feature; uplift is f(x,1) - f(x,0). Shares statistical strength across arms but is biased toward zero effect, because the learner rarely splits on one weak binary feature among many stronger ones.",
+    "fit_seconds": 62.76,
+    "n_train": 4001013,
+    "best_iterations": {
+      "s_learner": 334
+    },
+    "diagnostics": {
+      "treatment_split_share": 0.019013360739979446,
+      "treatment_splits": 185
+    },
+    "qini_coefficient": 1614.1815898990385
+  },
+  "t_learner": {
+    "name": "t_learner",
+    "kind": "t_learner",
+    "is_causal": true,
+    "description": "Two independent gradient-boosted classifiers, one per treatment arm; uplift is mu_1(x) - mu_0(x). Captures heterogeneity without shrinking it, at the cost of a much noisier control-arm model under this dataset's 85/15 split.",
+    "fit_seconds": 44.73,
+    "n_train": 4001013,
+    "best_iterations": {
+      "treated": 292,
+      "control": 137
+    },
+    "diagnostics": {
+      "n_treated": 3400201,
+      "n_control": 600812,
+      "conv_treated": 0.0030977580443038513,
+      "conv_control": 0.0019490289807793453
+    },
+    "qini_coefficient": 1312.1569051292454
+  },
+  "x_learner": {
+    "name": "x_learner",
+    "kind": "x_learner",
+    "is_causal": true,
+    "description": "X-learner (K\u00fcnzel et al. 2019): imputes individual effects on observed units, regresses them on X within each arm, then blends by the propensity score so the arm with more data dominates. Designed for exactly the lopsided 85/15 allocation in this dataset.",
+    "fit_seconds": 194.18,
+    "n_train": 4001013,
+    "best_iterations": {
+      "mu_treated": 354,
+      "mu_control": 141,
+      "tau_treated": 600,
+      "tau_control": 600
+    },
+    "diagnostics": {
+      "propensity_used": 0.8498350292788351,
+      "weight_tau_control": 0.8498350292788351,
+      "mean_d1": 0.0010126186603599768,
+      "mean_d0": 0.0008490420049429066
+    },
+    "qini_coefficient": 1598.5000696838624
+  },
+  "dr_learner": {
+    "name": "dr_learner",
+    "kind": "dr_learner",
+    "is_causal": true,
+    "description": "Cross-fitted doubly-robust learner: builds AIPW pseudo-outcomes with out-of-fold nuisance predictions and regresses them on X with an L1 objective. Consistent if either the outcome or the propensity model is correct; the reference estimator here.",
+    "fit_seconds": 898.11,
+    "n_train": 4001013,
+    "best_iterations": {
+      "tau": 600
+    },
+    "diagnostics": {
+      "n_folds": 3,
+      "e_clip": 0.02,
+      "propensity_mean": 0.8498227374237366,
+      "propensity_std": 0.010075604081193713,
+      "propensity_min": 0.7099472089508996,
+      "propensity_max": 0.9761682447137181,
+      "constant_propensity": 0.8498350292788351,
+      "pseudo_outcome_mean": 0.0009806038426173238,
+      "pseudo_outcome_std": 0.1286604559616163,
+      "pseudo_outcome_p99": 0.03094280800376922,
+      "mu1_mean": 0.0030472431640902993,
+      "mu0_mean": 0.0020460604230079834
+    },
+    "qini_coefficient": -1804.553674299859
+  }
+}

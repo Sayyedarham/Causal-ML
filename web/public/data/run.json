@@ -1,0 +1,56 @@
+{
+  "schema_version": 3,
+  "package_version": "0.1.0",
+  "generated_utc": "2026-10-13T15:19:56Z",
+  "config": {
+    "seed": 20240607,
+    "outcome": "conversion",
+    "train_sample_rows": 4000000,
+    "valid_sample_rows": 1000000,
+    "split": {
+      "train": 0.6,
+      "valid": 0.1,
+      "test": 0.3
+    },
+    "models": [
+      "response",
+      "constant",
+      "s_learner",
+      "t_learner",
+      "x_learner",
+      "dr_learner"
+    ],
+    "bootstrap_draws": 1000
+  },
+  "lgbm_params": {
+    "objective": "binary",
+    "boosting_type": "gbdt",
+    "n_estimators": 600,
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 500,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 10.0,
+    "reg_alpha": 1.0,
+    "n_jobs": 8,
+    "verbose": -1,
+    "deterministic": true,
+    "force_row_wise": true
+  },
+  "timings_sec": {
+    "data": 3.1,
+    "fit": 1267.8,
+    "diagnostics": 226.1,
+    "evaluate": 27211.1,
+    "allocate": 0.3
+  },
+  "environment": {
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.2.6"
+  },
+  "dataset_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc"
+}

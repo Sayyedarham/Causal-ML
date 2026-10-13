@@ -1,0 +1,25 @@
+{
+  "schema_version": 3,
+  "name": "constant",
+  "kind": "constant",
+  "is_causal": true,
+  "description": "Applies the sample average treatment effect to every user. Equivalent to random targeting and to assuming the effect is homogeneous; it is the floor that any heterogeneous-effect model must beat.",
+  "feature_names": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11"
+  ],
+  "treatment_feature_index": null,
+  "blend_weight_control": null,
+  "constant": 0.001148729063524506,
+  "components": {}
+}

@@ -1,0 +1,46 @@
+# --- data (large, re-downloadable) ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- node / next ---
+node_modules/
+web/.next/
+web/out/
+web/.vercel/
+.vercel/
+npm-debug.log*
+yarn-error.log*
+
+# --- artifacts: generated, but the summary JSON the site needs IS committed ---
+artifacts/models/*.txt
+artifacts/*.parquet
+*.npy
+
+# --- env / secrets ---
+.env
+.env.local
+.env*.local
+
+# --- editor / os ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

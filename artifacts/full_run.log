@@ -1,0 +1,54 @@
+07:31:09 INFO    === stage: data ===
+07:31:10 INFO    split=train sampled 8,387,918 -> 4,001,013 rows
+07:31:11 INFO    split=valid sampled 1,396,662 -> 999,672 rows
+07:31:13 INFO    split=train n=4,001,013 treated=3,400,201 control=600,812 conv=0.00293
+07:31:13 INFO    split=valid n=999,672 treated=849,358 control=150,314 conv=0.00296
+07:31:13 INFO    split=test  n=4,195,012 treated=3,565,143 control=629,869 conv=0.00291
+07:31:13 INFO    === stage: fit ===
+07:31:13 INFO    fitting response ...
+07:32:20 INFO      response    done in 67.8s
+07:32:20 INFO    fitting constant ...
+07:32:20 INFO      constant    done in 0.0s
+07:32:20 INFO    fitting s_learner ...
+07:33:23 INFO      s_learner   done in 62.8s
+07:33:23 INFO    fitting t_learner ...
+07:34:08 INFO      t_learner   done in 44.8s
+07:34:08 INFO    fitting x_learner ...
+07:37:22 INFO      x_learner   done in 194.2s
+07:37:22 INFO    fitting dr_learner ...
+07:52:20 INFO      dr_learner  done in 898.3s
+07:52:20 INFO    === stage: diagnostics ===
+07:52:23 INFO    randomization: max|SMD|=0.0468 propensity AUC=0.5049
+07:56:07 INFO    === stage: evaluate ===
+07:56:24 INFO    scored response    in 17.6s (mean=0.00292914)
+07:56:24 INFO    scored constant    in 0.0s (mean=0.00114873)
+07:56:54 INFO    scored s_learner   in 30.2s (mean=0.000918771)
+07:57:12 INFO    scored t_learner   in 17.6s (mean=0.00100295)
+07:58:04 INFO    scored x_learner   in 52.6s (mean=0.00178861)
+07:58:33 INFO    scored dr_learner  in 28.1s (mean=-0.00159711)
+15:29:38 INFO    === stage: allocate ===
+15:29:38 INFO    === stage: export ===
+15:29:38 INFO    wrote dataset.json (2.9 KB)
+20:49:56 INFO    wrote exposure.json (4.7 KB)
+20:49:56 INFO    wrote run.json (1.2 KB)
+20:49:56 INFO    wrote randomization.json (3.6 KB)
+20:49:56 INFO    wrote effects.json (1.6 KB)
+20:49:56 INFO    wrote curves.json (196.2 KB)
+20:49:56 INFO    wrote topk.json (18.6 KB)
+20:49:56 INFO    wrote calibration.json (20.3 KB)
+20:49:56 INFO    wrote models.json (4.2 KB)
+20:49:56 INFO    wrote feature_importance.json (4.2 KB)
+20:49:56 INFO    wrote allocation.json (345.5 KB)
+20:49:56 INFO    wrote response.json (2249.3 KB)
+20:49:56 INFO    wrote constant.json (0.6 KB)
+20:49:57 INFO    wrote s_learner.json (1939.5 KB)
+20:49:57 INFO    wrote t_learner.json (2409.4 KB)
+20:49:59 INFO    wrote x_learner.json (7128.3 KB)
+20:50:00 INFO    wrote dr_learner.json (3577.8 KB)
+20:50:00 INFO    wrote manifest.json (2.5 KB)
+20:50:00 INFO    synced 19 artifact files to C:\Users\hp\Documents\Causal ML\web\data
+20:50:00 INFO    === stage: diagnostics (with fitted nuisances) ===
+20:50:02 INFO    randomization: max|SMD|=0.0468 propensity AUC=0.5049
+20:53:54 INFO    wrote randomization.json (3.6 KB)
+20:53:54 INFO    wrote effects.json (1.6 KB)
+20:53:54 INFO    pipeline complete in 48164.3s

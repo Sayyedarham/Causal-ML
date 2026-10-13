@@ -1,0 +1,136 @@
+{
+  "outcome": "conversion",
+  "n_test": 4195012,
+  "exposure_rate_treated": 0.03607681374912591,
+  "exposure_rate_control": 0.0,
+  "one_sided_noncompliance": true,
+  "contrasts": [
+    {
+      "name": "itt_randomized",
+      "estimate": 0.0011189998637484663,
+      "ci_lo": 0.0010092741805148042,
+      "ci_hi": 0.0012365800456704595,
+      "n_a": 3565143,
+      "n_b": 629869,
+      "rate_a": 0.003078137398696209,
+      "rate_b": 0.001959137534947743,
+      "note": "Intention-to-treat: contrast on randomized assignment. The primary estimate. Valid because assignment is random and nothing downstream of it is conditioned on."
+    },
+    {
+      "name": "cace_wald_iv",
+      "estimate": 0.031017147787214937,
+      "ci_lo": 0.02772690333886432,
+      "ci_hi": 0.034309198697528305,
+      "n_a": 128619,
+      "n_b": 0,
+      "rate_a": null,
+      "rate_b": null,
+      "note": "Wald ratio of the ITT outcome effect to the ITT effect on exposure. Identifies the effect of actually being shown the ad among users who would be exposed if targeted, using randomization as the instrument. Valid under one-sided noncompliance, which holds exactly here."
+    },
+    {
+      "name": "naive_exposed_vs_all_control",
+      "estimate": 0.052426295410418024,
+      "ci_lo": 0.05119898380296581,
+      "ci_hi": 0.05376712967718247,
+      "n_a": 128619,
+      "n_b": 629869,
+      "rate_a": 0.05438543294536577,
+      "rate_b": 0.001959137534947743,
+      "note": "Filters to users who were actually shown the ad and compares them with the whole control arm. Biased twice over: controls could never be exposed, and exposure selects on engagement."
+    },
+    {
+      "name": "naive_exposed_vs_unexposed_treated",
+      "estimate": 0.05322757692573663,
+      "ci_lo": 0.05193600710953523,
+      "ci_hi": 0.05444932163860341,
+      "n_a": 128619,
+      "n_b": 3436524,
+      "rate_a": 0.05438543294536577,
+      "rate_b": 0.001157856019629137,
+      "note": "As-treated comparison inside the treated arm. Exposure is a collider on the path from user activity to the outcome, so this picks up selection, not causation."
+    }
+  ],
+  "exposed_vs_control_imbalance": {
+    "rows": [
+      {
+        "feature": "f3",
+        "mean_exposed": 1.3789370599745296,
+        "mean_control": 4.233659462655819,
+        "smd": -1.4337289590296718
+      },
+      {
+        "feature": "f6",
+        "mean_exposed": -11.073220951834433,
+        "mean_control": -4.007919319125746,
+        "smd": -1.360289032757544
+      },
+      {
+        "feature": "f8",
+        "mean_exposed": 3.868629977195909,
+        "mean_control": 3.9347488165725775,
+        "smd": -0.9977718860587858
+      },
+      {
+        "feature": "f9",
+        "mean_exposed": 24.217416214334367,
+        "mean_control": 15.879185156364354,
+        "smd": 0.8631489104532034
+      },
+      {
+        "feature": "f0",
+        "mean_exposed": 15.871252600744208,
+        "mean_control": 19.663663284612678,
+        "smd": -0.8374381984693663
+      },
+      {
+        "feature": "f5",
+        "mean_exposed": 3.4708204068090747,
+        "mean_control": 4.039294166104667,
+        "smd": -0.6273171742672372
+      },
+      {
+        "feature": "f7",
+        "mean_exposed": 6.1157904503863945,
+        "mean_control": 5.081629753398198,
+        "smd": 0.581339141705035
+      },
+      {
+        "feature": "f4",
+        "mean_exposed": 10.645170683034742,
+        "mean_control": 10.336298599524541,
+        "smd": 0.437014167388354
+      },
+      {
+        "feature": "f1",
+        "mean_exposed": 10.183063846993246,
+        "mean_control": 10.067874765198303,
+        "smd": 0.4263305161646243
+      },
+      {
+        "feature": "f10",
+        "mean_exposed": 5.429476057074605,
+        "mean_control": 5.33182760341266,
+        "smd": 0.40608760591925497
+      },
+      {
+        "feature": "f11",
+        "mean_exposed": -0.18824617475550898,
+        "mean_control": -0.17085429404357466,
+        "smd": -0.3220911050576234
+      },
+      {
+        "feature": "f2",
+        "mean_exposed": 8.454304767326557,
+        "mean_control": 8.447607035660136,
+        "smd": 0.024462728719609923
+      }
+    ],
+    "max_abs_smd": 1.4337289590296718,
+    "mean_abs_smd": 0.6930849521658593,
+    "interpretation": "Treated vs control is balanced by randomization, but *exposed* treated vs control is not: exposure is behaviourally selected. Any |SMD| above ~0.1 is covariate imbalance the naive contrast would mistake for a treatment effect."
+  },
+  "inflation_exposed_vs_all_control": 46.851029306472405,
+  "inflation_within_treated": 47.56709866561821,
+  "n_draws": 1000,
+  "verdict": "The primary analysis uses randomized assignment only. Recovering an effect-on-the-exposed is done with the Wald/IV ratio, which keeps randomization as the source of variation instead of conditioning on a post-treatment variable."
+}

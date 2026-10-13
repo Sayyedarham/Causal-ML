@@ -1,0 +1,46 @@
+{
+  "outcome": "conversion",
+  "primary": {
+    "estimator": "difference_in_means",
+    "ate": 0.0011189998637484663,
+    "se": 6.296856940219563e-05,
+    "se_bootstrap": 6.277082108175511e-05,
+    "ci_lo": 0.0009952170867979441,
+    "ci_hi": 0.0012400089504453504,
+    "confidence": 0.95,
+    "n_treated": 3565143,
+    "n_control": 629869,
+    "rate_treated": 0.003078137398696209,
+    "rate_control": 0.001959137534947743,
+    "relative_lift": 0.5711696314257559,
+    "n_draws": 1000
+  },
+  "aipw": {
+    "estimator": "aipw",
+    "ate": 0.0009389310208872785,
+    "se": 5.86104417439603e-05,
+    "ci_lo": 0.0008240566659241757,
+    "ci_hi": 0.0010538053758503813,
+    "n": 4195012,
+    "e_clip": 0.01,
+    "propensity_min": 0.8498350292788351,
+    "propensity_max": 0.8498350292788351
+  },
+  "secondary_outcome": {
+    "outcome": "visit",
+    "estimator": "difference_in_means",
+    "ate": 0.01008626317758373,
+    "se": 0.00026775059530296494,
+    "se_bootstrap": 0.00027977379189566545,
+    "ci_lo": 0.009549744814681824,
+    "ci_hi": 0.010648438395876828,
+    "confidence": 0.95,
+    "n_treated": 3565143,
+    "n_control": 629869,
+    "rate_treated": 0.04855934250042705,
+    "rate_control": 0.03847307932284332,
+    "relative_lift": 0.26216417700662265,
+    "n_draws": 1000
+  },
+  "interpretation": "Both estimates are intention-to-treat on the randomized assignment. The difference-in-means estimator is unbiased under randomization alone; AIPW additionally uses outcome models and is the semiparametric-efficient version of the same quantity. Their agreement is evidence that the outcome models are not distorting the effect."
+}

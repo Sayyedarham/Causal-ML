@@ -1,0 +1,9 @@
+{
+  "train_sample_rows": 200000,
+  "valid_sample_rows": 50000,
+  "eval": {
+    "n_curve_points": 100,
+    "bootstrap_draws": 200,
+    "bootstrap_curve_draws": 50
+  }
+}

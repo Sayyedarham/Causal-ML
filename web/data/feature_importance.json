@@ -1,0 +1,272 @@
+{
+  "response": [
+    {
+      "feature": "f0",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f1",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f2",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f3",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f4",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f5",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f6",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f7",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f8",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f9",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f10",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f11",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "treatment",
+      "gain_share": 0.0
+    }
+  ],
+  "s_learner": [
+    {
+      "feature": "f4",
+      "gain_share": 0.32478778452301543
+    },
+    {
+      "feature": "f10",
+      "gain_share": 0.2811074380535315
+    },
+    {
+      "feature": "f8",
+      "gain_share": 0.12548811317128405
+    },
+    {
+      "feature": "f9",
+      "gain_share": 0.10725861419771647
+    },
+    {
+      "feature": "f2",
+      "gain_share": 0.05847039874967001
+    },
+    {
+      "feature": "f11",
+      "gain_share": 0.04985943010149568
+    },
+    {
+      "feature": "f6",
+      "gain_share": 0.01880287872666782
+    },
+    {
+      "feature": "f3",
+      "gain_share": 0.017589482736573698
+    },
+    {
+      "feature": "f0",
+      "gain_share": 0.009332297336302859
+    },
+    {
+      "feature": "f7",
+      "gain_share": 0.0033973789307130634
+    },
+    {
+      "feature": "treatment",
+      "gain_share": 0.002830573256993664
+    },
+    {
+      "feature": "f5",
+      "gain_share": 0.0006219302529818393
+    },
+    {
+      "feature": "f1",
+      "gain_share": 0.0004536799630539686
+    }
+  ],
+  "t_learner": [
+    {
+      "feature": "f0",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f1",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f2",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f3",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f4",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f5",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f6",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f7",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f8",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f9",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f10",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f11",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "treatment",
+      "gain_share": 0.0
+    }
+  ],
+  "x_learner": [
+    {
+      "feature": "f0",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f1",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f2",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f3",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f4",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f5",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f6",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f7",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f8",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f9",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f10",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f11",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "treatment",
+      "gain_share": 0.0
+    }
+  ],
+  "dr_learner": [
+    {
+      "feature": "f0",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f1",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f2",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f3",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f4",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f5",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f6",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f7",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f8",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f9",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f10",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "f11",
+      "gain_share": 0.0
+    },
+    {
+      "feature": "treatment",
+      "gain_share": 0.0
+    }
+  ]
+}

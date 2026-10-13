@@ -1,0 +1,67 @@
+{
+  "schema_version": 3,
+  "feature_names": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11"
+  ],
+  "models": {
+    "response": {
+      "kind": "response",
+      "is_causal": false,
+      "components": [
+        "response"
+      ],
+      "description": "Treatment-blind gradient-boosted classifier ranking users by predicted conversion probability P(Y=1|X). The conventional targeting policy: it identifies who will convert, not who converts because of the ad."
+    },
+    "constant": {
+      "kind": "constant",
+      "is_causal": true,
+      "components": [],
+      "description": "Applies the sample average treatment effect to every user. Equivalent to random targeting and to assuming the effect is homogeneous; it is the floor that any heterogeneous-effect model must beat."
+    },
+    "s_learner": {
+      "kind": "s_learner",
+      "is_causal": true,
+      "components": [
+        "s_learner"
+      ],
+      "description": "Single gradient-boosted classifier with the treatment indicator appended as one more feature; uplift is f(x,1) - f(x,0). Shares statistical strength across arms but is biased toward zero effect, because the learner rarely splits on one weak binary feature among many stronger ones."
+    },
+    "t_learner": {
+      "kind": "t_learner",
+      "is_causal": true,
+      "components": [
+        "control",
+        "treated"
+      ],
+      "description": "Two independent gradient-boosted classifiers, one per treatment arm; uplift is mu_1(x) - mu_0(x). Captures heterogeneity without shrinking it, at the cost of a much noisier control-arm model under this dataset's 85/15 split."
+    },
+    "x_learner": {
+      "kind": "x_learner",
+      "is_causal": true,
+      "components": [
+        "tau_control",
+        "tau_treated"
+      ],
+      "description": "X-learner (K\u00fcnzel et al. 2019): imputes individual effects on observed units, regresses them on X within each arm, then blends by the propensity score so the arm with more data dominates. Designed for exactly the lopsided 85/15 allocation in this dataset."
+    },
+    "dr_learner": {
+      "kind": "dr_learner",
+      "is_causal": true,
+      "components": [
+        "tau"
+      ],
+      "description": "Cross-fitted doubly-robust learner: builds AIPW pseudo-outcomes with out-of-fold nuisance predictions and regresses them on X with an L1 objective. Consistent if either the outcome or the propensity model is correct; the reference estimator here."
+    }
+  }
+}
